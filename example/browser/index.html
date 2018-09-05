@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,iframe{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+<body>
+<script src="../../dist/nvm.js"></script>
+<!--<script src="index.js"></script>-->
+<!--<script src="test.js"></script>-->
+
+<iframe id="contract" src="../contracts/IntelligentStore.js" frameborder="0" height="100%"></iframe>
+<script src="IntelligentStore.js"></script>
+<script>
+    const iframe = document.getElementById('contract');
+    iframe.onload = function () {
+        let source = iframe.contentWindow.document.body.innerText;
+        init(source);
+    };
+</script>
+</body>
+</html>
